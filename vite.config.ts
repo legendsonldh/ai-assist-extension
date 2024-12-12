@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
 import copy from 'rollup-plugin-copy'
+import del from 'rollup-plugin-delete'  // 导入 delete 插件
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -13,7 +14,8 @@ export default defineConfig({
         { src: 'manifest.json', dest: 'dist' },
         { src: "src/icons/**", dest: 'dist/icons' }
       ]
-    })
+    }),
+    del({ targets: 'dist/*', hook: 'buildStart' })  // 在构建开始时清空 dist 文件夹
   ],
   build: {
     outDir: path.resolve(__dirname, 'dist'),
