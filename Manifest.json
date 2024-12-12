@@ -1,0 +1,36 @@
+{
+    "manifest_version": 3,
+    "name": "ASDT GitLab AI Asist",
+    "version": "0.0.1",
+    "description": "ASDT GitLab Asist Asistddsdd",
+    "icons": {
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    },
+    "action": {
+      "default_title": "Vue Chrome Ext",
+      "default_icon": "icons/icon.png",
+      "default_popup": "popup/index.html"
+    },
+    "background": {
+      "service_worker": "background/service-worker.js"
+    },
+    "permissions": [],
+    "host_permissions": [],
+    "content_scripts": [
+      {
+        "js": [
+          "content/content.js"
+        ],
+        "matches": [
+          "http://127.0.0.1:5500/*"
+        ],
+        "all_frames": true,
+        "run_at": "document_end",
+        "match_about_blank": true
+      }
+    ]
+      
+      
+  }
+  
