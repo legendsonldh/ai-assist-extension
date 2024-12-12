@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <el-tabs v-model="currentTab" class="gitlab-tabs" type="card" @tab-click="onTabClick">
+    <el-tabs v-model="currentTab" class="gitlab-tabs" @tab-click="onTabClick">
       <el-tab-pane label="To Review" name="to_review">
         <template #label>
           To Review <span class="badge">{{ toReviewCount }}</span>
@@ -79,3 +79,13 @@ const onTabClick = (tab: TabsPaneContext) => {
   console.log('Selected Tab:', tab);
 };
 </script>
+
+
+<style>
+.gitlab-tabs > .el-tabs__content {
+  padding: 32px;
+  color: #6b778c;
+  font-size: 32px;
+  font-weight: 600;
+}
+</style>
